@@ -104,7 +104,15 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
                   size: 30.0,
                 ),
                 onPressed: () async {
-                  context.safePop();
+                  context.goNamed(
+                    'homepage',
+                    extra: <String, dynamic>{
+                      kTransitionInfoKey: const TransitionInfo(
+                        hasTransition: true,
+                        transitionType: PageTransitionType.leftToRight,
+                      ),
+                    },
+                  );
                 },
               ),
               title: RichText(

@@ -227,7 +227,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                 ),
               ],
               centerTitle: false,
-              elevation: 1.0,
+              elevation: 0.0,
             )
           ],
           body: Builder(
