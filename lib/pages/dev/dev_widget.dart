@@ -33,14 +33,14 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
         effectsBuilder: () => [
           MoveEffect(
             curve: Curves.easeInOut,
-            delay: 0.0.ms,
+            delay: 80.0.ms,
             duration: 600.0.ms,
             begin: const Offset(-14.0, 0.0),
             end: const Offset(0.0, 0.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 100.0.ms,
+            delay: 20.0.ms,
             duration: 200.0.ms,
             begin: 0.0,
             end: 1.0,
@@ -52,14 +52,14 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
         effectsBuilder: () => [
           MoveEffect(
             curve: Curves.easeInOut,
-            delay: 0.0.ms,
+            delay: 80.0.ms,
             duration: 600.0.ms,
             begin: const Offset(0.0, -14.0),
             end: const Offset(0.0, 0.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 100.0.ms,
+            delay: 20.0.ms,
             duration: 200.0.ms,
             begin: 0.0,
             end: 1.0,
@@ -158,7 +158,7 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
               return SafeArea(
                 top: false,
                 child: Column(
-                  mainAxisSize: MainAxisSize.max,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Padding(
                       padding:
@@ -182,7 +182,7 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
                                   alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 90.0, 16.0, 16.0),
+                                        16.0, 100.0, 16.0, 16.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
@@ -251,7 +251,7 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
                                         Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 12.0, 0.0, 0.0),
+                                                  0.0, 10.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [

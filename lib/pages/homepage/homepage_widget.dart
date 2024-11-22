@@ -91,7 +91,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 35.0, 0.0, 0.0),
                     child: RichText(
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
@@ -127,7 +127,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 45.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -139,8 +139,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                           Navigator.pop(context);
                         }
 
-                        await Future.delayed(
-                            const Duration(milliseconds: 1000));
+                        await Future.delayed(const Duration(milliseconds: 250));
 
                         context.pushNamed(
                           'dev',
@@ -242,7 +241,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                         alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 26.0, 0.0, 0.0),
+                              0.0, 20.0, 0.0, 0.0),
                           child: Text(
                             'APP & WEB SERVICE PROVIDERS',
                             style: FlutterFlowTheme.of(context)
@@ -1097,9 +1096,9 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                       scrollDirection: Axis.horizontal,
                                       autoPlay: true,
                                       autoPlayAnimationDuration:
-                                          const Duration(milliseconds: 800),
+                                          const Duration(milliseconds: 1600),
                                       autoPlayInterval:
-                                          const Duration(milliseconds: (800 + 1000)),
+                                          const Duration(milliseconds: (1600 + 1400)),
                                       autoPlayCurve: Curves.linear,
                                       pauseAutoPlayInFiniteScroll: true,
                                       onPageChanged: (index, _) =>
