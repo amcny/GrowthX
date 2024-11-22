@@ -134,7 +134,23 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('dev');
+                        if (scaffoldKey.currentState!.isDrawerOpen ||
+                            scaffoldKey.currentState!.isEndDrawerOpen) {
+                          Navigator.pop(context);
+                        }
+
+                        await Future.delayed(
+                            const Duration(milliseconds: 1000));
+
+                        context.pushNamed(
+                          'dev',
+                          extra: <String, dynamic>{
+                            kTransitionInfoKey: const TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.rightToLeft,
+                            ),
+                          },
+                        );
                       },
                       child: Text(
                         'About Developer',
@@ -283,7 +299,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 20.0, 16.0, 16.0),
+                            16.0, 12.0, 16.0, 16.0),
                         child: Text(
                           'We are Top Rated Web & App Development\nservice providers who create amazing\napps for world class companies 10X faster.',
                           textAlign: TextAlign.center,
@@ -303,7 +319,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                         alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 4.0, 0.0, 0.0),
+                              16.0, 2.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -1020,7 +1036,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
 
                                 return SizedBox(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
-                                  height: 395.0,
+                                  height: 375.0,
                                   child: CarouselSlider.builder(
                                     itemCount: eachProject.length,
                                     itemBuilder:
@@ -1094,52 +1110,6 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                               },
                             );
                           },
-                        ),
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 4.0, 0.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
-                                child: Text(
-                                  'INDUSTRIES',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        color: const Color(0xFFF0B90B),
-                                        fontSize: 15.0,
-                                        letterSpacing: 1.5,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 0.0, 0.0),
-                                child: Container(
-                                  width:
-                                      MediaQuery.sizeOf(context).width * 0.55,
-                                  height: 0.65,
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        FlutterFlowTheme.of(context).primary,
-                                        const Color(0xFF181A20)
-                                      ],
-                                      stops: const [0.0, 1.0],
-                                      begin: const AlignmentDirectional(-1.0, -1.0),
-                                      end: const AlignmentDirectional(1.0, 1.0),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
                         ),
                       ),
                     ].addToEnd(const SizedBox(height: 26.0)),

@@ -104,15 +104,7 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
                   size: 30.0,
                 ),
                 onPressed: () async {
-                  context.goNamed(
-                    'homepage',
-                    extra: <String, dynamic>{
-                      kTransitionInfoKey: const TransitionInfo(
-                        hasTransition: true,
-                        transitionType: PageTransitionType.rightToLeft,
-                      ),
-                    },
-                  );
+                  context.safePop();
                 },
               ),
               title: RichText(
@@ -173,8 +165,7 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
                                   16.0, 18.0, 16.0, 0.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
-                                height:
-                                    MediaQuery.sizeOf(context).height * 0.33,
+                                height: 258.0,
                                 decoration: BoxDecoration(
                                   color: const Color(0xFF1E2329),
                                   borderRadius: BorderRadius.circular(12.0),
@@ -185,32 +176,26 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 90.0, 16.0, 16.0),
                                     child: Column(
-                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Align(
                                           alignment:
                                               const AlignmentDirectional(0.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 12.0, 0.0, 0.0),
-                                            child: Text(
-                                              'Chaitanya Pullagura',
-                                              textAlign: TextAlign.start,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .headlineSmall
-                                                  .override(
-                                                    fontFamily: 'Montserrat',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    fontSize: 20.0,
-                                                    letterSpacing: 0.5,
-                                                    fontWeight: FontWeight.w600,
-                                                    lineHeight: 1.5,
-                                                  ),
-                                            ),
+                                          child: Text(
+                                            'Chaitanya Pullagura',
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.5,
+                                                  fontWeight: FontWeight.w600,
+                                                  lineHeight: 1.5,
+                                                ),
                                           ),
                                         ),
                                         Padding(
@@ -218,7 +203,7 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 6.0, 0.0, 0.0),
                                           child: Text(
-                                            'App Developer',
+                                            'UI/UX & App Developer',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
                                                 .override(
@@ -240,7 +225,7 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
                                             child: Text(
-                                              'National Institute of Technlogy\nAndhra Pradesh',
+                                              'NIT Andhra Pradesh',
                                               textAlign: TextAlign.center,
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -258,7 +243,7 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
                                         Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 8.0, 0.0, 0.0),
+                                                  0.0, 12.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
@@ -314,7 +299,7 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(const SizedBox(width: 20.0)),
+                                            ].divide(const SizedBox(width: 30.0)),
                                           ),
                                         ),
                                       ],
@@ -326,7 +311,7 @@ class _DevWidgetState extends State<DevWidget> with TickerProviderStateMixin {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.2),
                             child: Container(
                               width: 125.0,
                               height: 125.0,
